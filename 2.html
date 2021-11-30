@@ -96,6 +96,44 @@
 
 
 
+
+ // Создание класса
+ class PostES6 {
+   constructor(name, text) {
+     this.name = name;
+     this.text = text;
+     this.date = new Date();
+   }
+
+   edit = function (text) {
+     this.text = text;
+     this.date = new Date();
+   }
+ }
+
+ // Создание поста
+ const post3 = new PostES6('Misha', 'I dont understand');
+ console.log(post3);
+ post3.edit('I understand');
+
+
+ // создание класса
+ class AttachedPostES6 extends PostES6 {
+   constructor(name, text) {
+     super(name, text);
+     this.highlighted = false;
+   }
+
+   makeTextHighlighted() {
+     this.highlighted = true;
+     this.date = new Date();
+   }
+ }
+
+ // Создание поста
+ const post4 = new AttachedPostES6('Alex', 'hi-hi');
+ console.log(post4);
+ post4.makeTextHighlighted();
 </script>
 </body>
 </html>
